@@ -1,5 +1,5 @@
 <?php
-namespace kl83\widgets;
+namespace pzavoli71\widgets;
 
 use yii\helpers\Json;
 
