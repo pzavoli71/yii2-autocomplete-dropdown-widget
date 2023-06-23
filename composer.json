@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "kl83\\widgets\\": "widget/"
+            "pzavoli71\\widgets\\": "widget/"
         }
     },
     "repositories": [
