@@ -1,6 +1,6 @@
 {
-    "name": "kl83/yii2-autocomplete-dropdown-widget",
-    "description": "Dropdown widget with autocomplete jQuery UI and ability to send in form identifier of the selected item.",
+    "name": "pzavoli71/yii2-autocomplete-dropdown-widget",
+    "description": "Dropdown widget with autocomplete jQuery UI and ability to send in form identifier of the selected item. Derived from k183 autocomplete",
     "keywords": ["yii2", "forms", "input widget"],
     "require": {
         "php": ">=5.4.0",
@@ -10,8 +10,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Aleksandr Solovyov",
-            "email": "solovyov.a.a.19@gmail.com"
+            "name": "Paride Zavoli",
+            "email": "paride.zavoli71@gmail.com"
         }
     ],
     "autoload": {
