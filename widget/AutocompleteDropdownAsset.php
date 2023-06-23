@@ -1,5 +1,5 @@
 <?php
-namespace kl83\widgets;
+namespace pzavoli71\widgets;
 
 class AutocompleteDropdownAsset extends \yii\web\AssetBundle
 {
