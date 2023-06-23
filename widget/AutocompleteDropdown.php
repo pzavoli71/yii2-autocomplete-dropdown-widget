@@ -26,6 +26,8 @@ class AutocompleteDropdown extends \yii\widgets\InputWidget
      */
     public $ajaxGlobal = false;
 
+    public $callbackBeforeSend = '';
+    
     function run()
     {
         AutocompleteDropdownAsset::register($this->view);
@@ -33,7 +35,8 @@ class AutocompleteDropdown extends \yii\widgets\InputWidget
         $this->view->registerJs("autocomleteDropdownInit('{$this->options['id']}',
             ".Json::encode($this->autocompleteOptions).",
             '$this->source',
-            ".($this->ajaxGlobal?'true':'false')."
+            ".($this->ajaxGlobal?'true':'false').",
+            '".$callbackBeforeSend."'
         )");
         return $this->render('widget', [
             'widget' => $this,
