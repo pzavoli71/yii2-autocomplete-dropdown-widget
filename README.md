@@ -10,11 +10,11 @@ The preferred way to install this extension is through [composer](https://getcom
 
 Either run
 ~~~
-php composer.phar require kl83/yii2-autocomplete-dropdown-widget ~1.0.0
+php composer.phar require pzavoli71/yii2-autocomplete-dropdown-widget ~1.0.0
 ~~~
 or add
 ~~~
-"kl83/yii2-autocomplete-dropdown-widget": "~1.0.0"
+"pzavoli71/yii2-autocomplete-dropdown-widget": "~1.0.0"
 ~~~
 to the require section of your composer.json file.
 
@@ -28,7 +28,7 @@ Option|Description
 
 ## Usage
 ```php
-<?= $form->field($model, 'createdBy')->widget('kl83\widgets\AutocompleteDropdown', [
+<?= $form->field($model, 'createdBy')->widget('pzavoli71\widgets\AutocompleteDropdown', [
     'source' => '/user/autocomplete-source',
     'textValue' => $model->user->fullName,
 ]) ?>
