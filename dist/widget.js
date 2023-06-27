@@ -20,7 +20,6 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
             global: ajaxGlobal,
             type: 'GET',
             url: source,
-            select: callAfterSelect,
             success: function ( items ) {
                 return response(items);
             }
@@ -30,6 +29,11 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
     if (typeof callRenderItem !== 'undefined') {
         autocompleteInput.autocomplete('instance')._renderItem = function(ul, item) {
             return callRenderItem(ul, item);
+        };
+    };
+    if (typeof callAfterSelect !== 'undefined') {
+        autocompleteInput.autocomplete('instance').select = function(event, ui) {
+            return callAfterSelect(event, ui;
         };
     }
     autocompleteInput.change(function(){
