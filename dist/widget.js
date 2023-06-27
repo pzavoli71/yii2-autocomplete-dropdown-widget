@@ -7,6 +7,8 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
     options.select = function(e, ui){
         selectedItemLabel = ui.item.label;
         hiddenInput.val(ui.item.id);
+        if (typeof callAfterSelect !== 'undefined') 
+            return callAfterSelect(e,ui);                        
     };
     options.source = function ( request, response ) {
         dati = {};
