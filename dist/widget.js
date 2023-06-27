@@ -33,7 +33,7 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
     };
     if (typeof callAfterSelect !== 'undefined') {
         autocompleteInput.autocomplete('instance').select = function(event, ui) {
-            return callAfterSelect(event, ui;
+            return callAfterSelect(event, ui);
         };
     }
     autocompleteInput.change(function(){
