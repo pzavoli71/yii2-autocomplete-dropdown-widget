@@ -1,4 +1,4 @@
-var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAttr, callbackBeforeSend){
+var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAttr, callbackBeforeSend, callAfterSelect, callRenderItem){
     var el = jQuery('#'+elId);
     var hiddenInput = el.find('input[type="hidden"]');
     var autocompleteInput = el.find('.autocomplete');
@@ -20,12 +20,18 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
             global: ajaxGlobal,
             type: 'GET',
             url: source,
+            source: callAfterSelect,
             success: function ( items ) {
                 return response(items);
             }
         });
     };
     autocompleteInput.autocomplete(options);
+    if (typeof callRenderItem !== 'undefined') {
+        autocompleteInput.autocomplete('instance')._renderItem = function(ul, item) {
+            callRenderItem(ul, item);
+        };
+    }
     autocompleteInput.change(function(){
         if ( selectedItemLabel !== jQuery(this).val() ) {
             hiddenInput.val(null);
