@@ -4,7 +4,9 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
     var autocompleteInput = el.find('.autocomplete');
     var selectedItemLabel;
     var NomeAttributo = NomeAttr;
-    autocompleteInput.attr('placeholder','Cerca');
+    autocompleteInput.attr('placeholder','Cerca...');
+    if (options != null && options.placeholder)
+        autocompleteInput.attr('placeholder',options.placeholder);
     options.select = function(e, ui){
         selectedItemLabel = ui.item.label;
         hiddenInput.val(ui.item.id);
