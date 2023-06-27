@@ -1,8 +1,9 @@
-var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, callbackBeforeSend){
+var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAttr, callbackBeforeSend){
     var el = jQuery('#'+elId);
     var hiddenInput = el.find('input[type="hidden"]');
     var autocompleteInput = el.find('.autocomplete');
     var selectedItemLabel;
+    var NomeAttributo = NomeAttr;
     options.select = function(e, ui){
         selectedItemLabel = ui.item.label;
         hiddenInput.val(ui.item.id);
@@ -10,6 +11,7 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, callba
     options.source = function ( request, response ) {
         dati = {};
         dati.term = request.term;
+        dati.NomeCombo = NomeAttr;
         if (typeof callbackBeforeSend !== 'undefined') {
             callbackBeforeSend(dati, request.term);
         }
