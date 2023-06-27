@@ -26,7 +26,11 @@ class AutocompleteDropdown extends \yii\widgets\InputWidget
      */
     public $ajaxGlobal = false;
 
-    public $callbackBeforeSend = '';
+    public $callbackBeforeSend = 'undefined';
+
+    public $callAfterSelect = 'undefined';
+
+    public $callRenderItem = 'undefined';
     
     function run()
     {
@@ -37,7 +41,9 @@ class AutocompleteDropdown extends \yii\widgets\InputWidget
             '$this->source',
             ".($this->ajaxGlobal?'true':'false').",
             '".$this->attribute."',
-            ".$this->callbackBeforeSend."
+            ".$this->callbackBeforeSend.",
+            ".$this->callRenderItem.",
+            ".$this->callAfterSelect."            
         )");
         return $this->render('widget', [
             'widget' => $this,
