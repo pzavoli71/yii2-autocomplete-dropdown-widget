@@ -20,6 +20,7 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
             global: ajaxGlobal,
             type: 'GET',
             url: source,
+            select: typeof callAfterSelect !== 'undefined'?function(event,ui) {return callAfterSelect(event, ui);}:null,
             success: function ( items ) {
                 return response(items);
             }
@@ -31,11 +32,11 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
             return callRenderItem(ul, item);
         };
     };
-    if (typeof callAfterSelect !== 'undefined') {
-        autocompleteInput.autocomplete('instance')._select = function(event, ui) {
-            return callAfterSelect(event, ui);
-        };
-    }
+    //if (typeof callAfterSelect !== 'undefined') {
+    //    autocompleteInput.autocomplete('instance')._select = function(event, ui) {
+    //        return callAfterSelect(event, ui);
+    //    };
+    //}
     autocompleteInput.change(function(){
         if ( selectedItemLabel !== jQuery(this).val() ) {
             hiddenInput.val(null);
