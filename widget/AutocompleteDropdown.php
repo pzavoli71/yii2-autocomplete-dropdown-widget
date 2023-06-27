@@ -42,8 +42,8 @@ class AutocompleteDropdown extends \yii\widgets\InputWidget
             ".($this->ajaxGlobal?'true':'false').",
             '".$this->attribute."',
             ".$this->callbackBeforeSend.",
-            ".$this->callRenderItem.",
-            ".$this->callAfterSelect."            
+            ".$this->callAfterSelect.",            
+            ".$this->callRenderItem."
         )");
         return $this->render('widget', [
             'widget' => $this,
