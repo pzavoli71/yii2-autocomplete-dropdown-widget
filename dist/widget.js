@@ -22,7 +22,7 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
             global: ajaxGlobal,
             type: 'GET',
             url: source,
-            select: typeof callAfterSelect !== 'undefined'?function(event,ui) {return callAfterSelect(event, ui);}:null,
+            //select: typeof callAfterSelect !== 'undefined'?function(event,ui) {return callAfterSelect(event, ui);}:null,
             success: function ( items ) {
                 return response(items);
             }
