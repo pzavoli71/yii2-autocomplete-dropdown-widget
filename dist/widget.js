@@ -20,7 +20,7 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
             global: ajaxGlobal,
             type: 'GET',
             url: source,
-            source: callAfterSelect,
+            select: callAfterSelect,
             success: function ( items ) {
                 return response(items);
             }
