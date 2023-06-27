@@ -36,6 +36,7 @@ class AutocompleteDropdown extends \yii\widgets\InputWidget
             ".Json::encode($this->autocompleteOptions).",
             '$this->source',
             ".($this->ajaxGlobal?'true':'false').",
+            ".$this->attribute.",
             ".$this->callbackBeforeSend."
         )");
         return $this->render('widget', [
