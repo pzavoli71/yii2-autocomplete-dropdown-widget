@@ -29,7 +29,7 @@ var autocomleteDropdownInit = function(elId, options, source, ajaxGlobal, NomeAt
     autocompleteInput.autocomplete(options);
     if (typeof callRenderItem !== 'undefined') {
         autocompleteInput.autocomplete('instance')._renderItem = function(ul, item) {
-            callRenderItem(ul, item);
+            return callRenderItem(ul, item);
         };
     }
     autocompleteInput.change(function(){
